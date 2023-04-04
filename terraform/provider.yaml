@@ -1,0 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket = "mybucket"
+    key    = "path/to/my/key"
+    region = "sa-east-1"
+    dynamodb_table = "my-terraform-lock"
+  }
+}
+
+provider "aws" {
+  version = ">= 2.28.1"
+  region     = "sa-east-1"
+}
